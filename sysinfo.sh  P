@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Simple system information script
+
+echo "Hostname: $(hostname)"
+echo "Uptime: $(uptime -p)"
+echo "User: $(whoami)"
+echo "Date: $(date)"
+echo "OS: $(uname -o)"
+echo "Kernel: $(uname -r)"
+echo "CPU: $(grep -m1 'model name' /proc/cpuinfo | cut -d: -f2 | xargs)"
+echo "Memory:"
+free -h
